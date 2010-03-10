@@ -1,0 +1,29 @@
+﻿/* 
+   Localizable.strings
+   TaekBae
+
+   Created by Keewon Seo on 09. 01. 12.
+   Copyright 2009 __MyCompanyName__. All rights reserved.
+ */
+"TaekBae" = "TaekBae";
+"New Item" = "New Item";
+"Edit Item" = "Edit Item";
+"Name" = "Name";
+"Company" = "Company";
+"Companies from Clip Board" = "Companies from Clip Board";
+"Other companies" = "Other companies";
+"Item No." = "Item No.";
+"Info" = "Info";
+"Untitled" = "Untitled";
+"Undefined" = "(Select delivery company)";
+"OK" = "OK";
+"Error" = "Error";
+"Please select delivery company." = "Please select delivery company.";
+"Select Numbers" = "Select Numbers";
+"Paste No." = "Paste No.";
+"homepage url" = "http://oedalpha.springnote.com/pages/2435384";
+"About TaekBae" = "TaekBae News";
+"Open App Store" = "Open App Store";
+"Open in Safari" = "Open in Safari";
+"Open" = "Open";
+"Cancel" = "Cancel";

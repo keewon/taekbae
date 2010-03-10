@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* TaekBaeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TaekBaeAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E55F0DE3E45000AC0155 /* RootViewController.xib */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		ED032D80111ED01E00BBE996 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7E111ED01E00BBE996 /* backIcon.png */; };
+		ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7F111ED01E00BBE996 /* forwardIcon.png */; };
+		ED6899340F19DA5E0012436F /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED6899330F19DA5E0012436F /* WebView.xib */; };
+		ED68993A0F19DC5E0012436F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6899390F19DC5E0012436F /* WebViewController.m */; };
+		ED89F69C0F11644F00635A0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED89F69A0F11644F00635A0A /* Localizable.strings */; };
+		EDA293BC0F481B4900B1E860 /* taekbae57.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA293BA0F481B4900B1E860 /* taekbae57.png */; };
+		EDA293BD0F481B4900B1E860 /* taekbae_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = EDA293BB0F481B4900B1E860 /* taekbae_db.sql */; };
+		EDA544A50F9A475800361A6F /* taekbae2_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = EDA544A40F9A475800361A6F /* taekbae2_db.sql */; };
+		EDA579E20F1A598C00B3AC6D /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA579E10F1A598C00B3AC6D /* ItemCell.m */; };
+		EDC8EDBB0F0E243F00DEE2A5 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EDBA0F0E243F00DEE2A5 /* EditViewController.m */; };
+		EDC8EE180F0E32C500DEE2A5 /* CompanyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EE170F0E32C500DEE2A5 /* CompanyListViewController.m */; };
+		EDC8EE810F0E390A00DEE2A5 /* TextEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */; };
+		EDC8EE830F0E393500DEE2A5 /* TextEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC8EE820F0E393500DEE2A5 /* TextEntryViewController.xib */; };
+		EDC8EEAD0F0E402300DEE2A5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EEAC0F0E402300DEE2A5 /* Item.m */; };
+		EDC8EF2C0F0E749D00DEE2A5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */; };
+		EDC8EFA00F0E83F800DEE2A5 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EF9F0F0E83F800DEE2A5 /* Company.m */; };
+		EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD3985710F64493000C3A72 /* PasteNumberViewController.m */; };
+		EDE96A3B114516D100675A74 /* icon_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDE96A3A114516D100675A74 /* icon_photo.png */; };
+		EDE96AA91145211200675A74 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = EDE96A651145211200675A74 /* tessdata */; };
+		EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDE96BE51145222200675A74 /* TessWrapper.mm */; };
+		EDE96BF9114526F400675A74 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE96BF8114526F400675A74 /* ImageUtils.m */; };
+		EDE96CE611452D7D00675A74 /* libtesseract_full_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */; };
+		EDE96CFD11452E4900675A74 /* libtiff_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96CFC11452E4900675A74 /* libtiff_s.a */; };
+		EDE96D0111452E6700675A74 /* libz_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96D0011452E6700675A74 /* libz_s.a */; };
+		EDE96D0511452E8C00675A74 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96D0411452E8C00675A74 /* libtesseract_full.a */; };
+		EDE96DC0114541BF00675A74 /* sample3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDE96DBF114541BF00675A74 /* sample3.jpg */; };
+		EDE96DCE114542CC00675A74 /* sample4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDE96DCD114542CC00675A74 /* sample4.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* TaekBaeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaekBaeAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* TaekBaeAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaekBaeAppDelegate.m; sourceTree = "<group>"; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E55F0DE3E45000AC0155 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		28A0AAE50D9B0CCF005BE974 /* TaekBae_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaekBae_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED032D7E111ED01E00BBE996 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
+		ED032D7F111ED01E00BBE996 /* forwardIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardIcon.png; sourceTree = "<group>"; };
+		ED6899330F19DA5E0012436F /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
+		ED6899380F19DC5E0012436F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		ED6899390F19DC5E0012436F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		ED89F69B0F11644F00635A0A /* ko */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDA293BA0F481B4900B1E860 /* taekbae57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taekbae57.png; path = ../../common/taekbae57.png; sourceTree = SOURCE_ROOT; };
+		EDA293BB0F481B4900B1E860 /* taekbae_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae_db.sql; path = ../../common/taekbae_db.sql; sourceTree = SOURCE_ROOT; };
+		EDA544A40F9A475800361A6F /* taekbae2_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae2_db.sql; path = ../../common/taekbae2_db.sql; sourceTree = SOURCE_ROOT; };
+		EDA579D40F1A577900B3AC6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDA579E00F1A598C00B3AC6D /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		EDA579E10F1A598C00B3AC6D /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		EDAE43E30F63AAB900C227FB /* TaekBae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaekBae.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC8EDB90F0E243F00DEE2A5 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		EDC8EDBA0F0E243F00DEE2A5 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		EDC8EE160F0E32C500DEE2A5 /* CompanyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyListViewController.h; sourceTree = "<group>"; };
+		EDC8EE170F0E32C500DEE2A5 /* CompanyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyListViewController.m; sourceTree = "<group>"; };
+		EDC8EE7F0F0E390A00DEE2A5 /* TextEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryViewController.h; sourceTree = "<group>"; };
+		EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntryViewController.m; sourceTree = "<group>"; };
+		EDC8EE820F0E393500DEE2A5 /* TextEntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEntryViewController.xib; sourceTree = "<group>"; };
+		EDC8EEAB0F0E402300DEE2A5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		EDC8EEAC0F0E402300DEE2A5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		EDC8EF9E0F0E83F800DEE2A5 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		EDC8EF9F0F0E83F800DEE2A5 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		EDD3985610F64493000C3A72 /* PasteNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteNumberViewController.h; sourceTree = "<group>"; };
+		EDD3985710F64493000C3A72 /* PasteNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteNumberViewController.m; sourceTree = "<group>"; };
+		EDE96A3A114516D100675A74 /* icon_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_photo.png; sourceTree = "<group>"; };
+		EDE96A651145211200675A74 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		EDE96AB81145218600675A74 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
+		EDE96BE41145222200675A74 /* TessWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessWrapper.h; sourceTree = "<group>"; };
+		EDE96BE51145222200675A74 /* TessWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TessWrapper.mm; sourceTree = "<group>"; };
+		EDE96BF7114526F400675A74 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUtils.h; path = /Volumes/Mac_2/AugmentedRealitySample/Classes/ImageUtils.h; sourceTree = "<absolute>"; };
+		EDE96BF8114526F400675A74 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUtils.m; path = /Volumes/Mac_2/AugmentedRealitySample/Classes/ImageUtils.m; sourceTree = "<absolute>"; };
+		EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtesseract_full_s.a; path = "iphone-simulator/lib/libtesseract_full_s.a"; sourceTree = "<group>"; };
+		EDE96CFC11452E4900675A74 /* libtiff_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff_s.a; path = "iphone-simulator/lib/libtiff_s.a"; sourceTree = "<group>"; };
+		EDE96D0011452E6700675A74 /* libz_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz_s.a; path = "iphone-simulator/lib/libz_s.a"; sourceTree = "<group>"; };
+		EDE96D0411452E8C00675A74 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
+		EDE96DBF114541BF00675A74 /* sample3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample3.jpg; sourceTree = "<group>"; };
+		EDE96DCD114542CC00675A74 /* sample4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample4.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				EDC8EF2C0F0E749D00DEE2A5 /* libsqlite3.0.dylib in Frameworks */,
+				EDE96CE611452D7D00675A74 /* libtesseract_full_s.a in Frameworks */,
+				EDE96CFD11452E4900675A74 /* libtiff_s.a in Frameworks */,
+				EDE96D0111452E6700675A74 /* libz_s.a in Frameworks */,
+				EDE96D0511452E8C00675A74 /* libtesseract_full.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EDC8EE7F0F0E390A00DEE2A5 /* TextEntryViewController.h */,
+				EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */,
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* TaekBaeAppDelegate.h */,
+				1D3623250D0F684500981E51 /* TaekBaeAppDelegate.m */,
+				EDC8EDB90F0E243F00DEE2A5 /* EditViewController.h */,
+				EDC8EDBA0F0E243F00DEE2A5 /* EditViewController.m */,
+				EDC8EE160F0E32C500DEE2A5 /* CompanyListViewController.h */,
+				EDC8EE170F0E32C500DEE2A5 /* CompanyListViewController.m */,
+				EDC8EEAB0F0E402300DEE2A5 /* Item.h */,
+				EDC8EEAC0F0E402300DEE2A5 /* Item.m */,
+				EDC8EF9E0F0E83F800DEE2A5 /* Company.h */,
+				EDC8EF9F0F0E83F800DEE2A5 /* Company.m */,
+				ED6899380F19DC5E0012436F /* WebViewController.h */,
+				ED6899390F19DC5E0012436F /* WebViewController.m */,
+				EDA579E00F1A598C00B3AC6D /* ItemCell.h */,
+				EDA579E10F1A598C00B3AC6D /* ItemCell.m */,
+				EDD3985610F64493000C3A72 /* PasteNumberViewController.h */,
+				EDD3985710F64493000C3A72 /* PasteNumberViewController.m */,
+				EDE96BE41145222200675A74 /* TessWrapper.h */,
+				EDE96BE51145222200675A74 /* TessWrapper.mm */,
+				EDE96BF7114526F400675A74 /* ImageUtils.h */,
+				EDE96BF8114526F400675A74 /* ImageUtils.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDAE43E30F63AAB900C227FB /* TaekBae.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* TaekBae_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96A651145211200675A74 /* tessdata */,
+				ED032D78111ECEE800BBE996 /* images */,
+				EDA544A40F9A475800361A6F /* taekbae2_db.sql */,
+				EDA293BA0F481B4900B1E860 /* taekbae57.png */,
+				EDA293BB0F481B4900B1E860 /* taekbae_db.sql */,
+				ED89F69A0F11644F00635A0A /* Localizable.strings */,
+				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				EDC8EE820F0E393500DEE2A5 /* TextEntryViewController.xib */,
+				ED6899330F19DA5E0012436F /* WebView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AAA1145218600675A74 /* ext */,
+				EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED032D78111ECEE800BBE996 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96DCD114542CC00675A74 /* sample4.jpg */,
+				EDE96DBF114541BF00675A74 /* sample3.jpg */,
+				EDE96A3A114516D100675A74 /* icon_photo.png */,
+				ED032D7E111ED01E00BBE996 /* backIcon.png */,
+				ED032D7F111ED01E00BBE996 /* forwardIcon.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EDE96AAA1145218600675A74 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96CE311452D5D00675A74 /* iphone-simulator */,
+				EDE96AAB1145218600675A74 /* iphone-os */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		EDE96AAB1145218600675A74 /* iphone-os */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AAC1145218600675A74 /* include */,
+				EDE96BB51145218600675A74 /* lib */,
+			);
+			path = "iphone-os";
+			sourceTree = "<group>";
+		};
+		EDE96AAC1145218600675A74 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AB11145218600675A74 /* tesseract */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EDE96AB11145218600675A74 /* tesseract */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AB81145218600675A74 /* baseapi.h */,
+			);
+			path = tesseract;
+			sourceTree = "<group>";
+		};
+		EDE96BB51145218600675A74 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96D0411452E8C00675A74 /* libtesseract_full.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EDE96CE311452D5D00675A74 /* iphone-simulator */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96CE411452D6800675A74 /* lib */,
+			);
+			name = "iphone-simulator";
+			sourceTree = "<group>";
+		};
+		EDE96CE411452D6800675A74 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96D0011452E6700675A74 /* libz_s.a */,
+				EDE96CFC11452E4900675A74 /* libtiff_s.a */,
+				EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* TaekBae */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TaekBae" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaekBae;
+			productName = TaekBae;
+			productReference = EDAE43E30F63AAB900C227FB /* TaekBae.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TaekBae" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+				ko,
+				Korean,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* TaekBae */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				EDC8EE830F0E393500DEE2A5 /* TextEntryViewController.xib in Resources */,
+				ED89F69C0F11644F00635A0A /* Localizable.strings in Resources */,
+				ED6899340F19DA5E0012436F /* WebView.xib in Resources */,
+				EDA293BC0F481B4900B1E860 /* taekbae57.png in Resources */,
+				EDA293BD0F481B4900B1E860 /* taekbae_db.sql in Resources */,
+				EDA544A50F9A475800361A6F /* taekbae2_db.sql in Resources */,
+				ED032D80111ED01E00BBE996 /* backIcon.png in Resources */,
+				ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */,
+				EDE96A3B114516D100675A74 /* icon_photo.png in Resources */,
+				EDE96AA91145211200675A74 /* tessdata in Resources */,
+				EDE96DC0114541BF00675A74 /* sample3.jpg in Resources */,
+				EDE96DCE114542CC00675A74 /* sample4.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* TaekBaeAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				EDC8EDBB0F0E243F00DEE2A5 /* EditViewController.m in Sources */,
+				EDC8EE180F0E32C500DEE2A5 /* CompanyListViewController.m in Sources */,
+				EDC8EE810F0E390A00DEE2A5 /* TextEntryViewController.m in Sources */,
+				EDC8EEAD0F0E402300DEE2A5 /* Item.m in Sources */,
+				EDC8EFA00F0E83F800DEE2A5 /* Company.m in Sources */,
+				ED68993A0F19DC5E0012436F /* WebViewController.m in Sources */,
+				EDA579E20F1A598C00B3AC6D /* ItemCell.m in Sources */,
+				EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */,
+				EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */,
+				EDE96BF9114526F400675A74 /* ImageUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED89F69A0F11644F00635A0A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED89F69B0F11644F00635A0A /* ko */,
+				EDA579D40F1A577900B3AC6D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TaekBae_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ext/iphone-os/lib\"",
+					"\"$(SRCROOT)/ext/iphone-simulator/lib\"",
+				);
+				PRODUCT_NAME = TaekBae;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TaekBae_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ext/iphone-os/lib\"",
+					"\"$(SRCROOT)/ext/iphone-simulator/lib\"",
+				);
+				PRODUCT_NAME = TaekBae;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kee-won Seo";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kee-won Seo";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				PROVISIONING_PROFILE = "EEC37144-5734-4775-96B0-CBB44AC511E7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EEC37144-5734-4775-96B0-CBB44AC511E7";
+				SDKROOT = iphoneos2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TaekBae" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TaekBae" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
