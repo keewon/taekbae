@@ -11,7 +11,7 @@
 
 @class EditViewController;
 
-@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate> {
+@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate, UIImagePickerControllerDelegate> {
 	IBOutlet UITextField* text1;
 	UIBarButtonItem* buttonSave;
 	NSInteger returnType;
@@ -20,8 +20,12 @@
 	IBOutlet UIButton* buttonPasteNumbers;
 	IBOutlet UIButton* buttonCapture;
 	NSMutableArray* numbers;
+	NSMutableDictionary* capturedNumbersDict;
+	NSString* bestCapturedNumber;
 	NSTimer *processingTimer;
 	BOOL enableSaveButton;
+	UILabel *labelCaptureResult;
+	CGRect captureRect;
 }
 
 //- (BOOL)textFieldShouldReturn:(UITextField *)textField;

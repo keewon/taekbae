@@ -25,7 +25,7 @@
 
 
 + (NSString*) getNumber:(const unsigned char*)data rect: (CGRect)rect {
-	char* result = TessBaseAPI::TesseractRect(data, 1, 320,
+	char* result = TessBaseAPI::TesseractRect(data, 1, rect.size.width,
 											  rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 	
 	if (result) {

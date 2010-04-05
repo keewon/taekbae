@@ -32,7 +32,6 @@
 		EDC8EF2C0F0E749D00DEE2A5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */; };
 		EDC8EFA00F0E83F800DEE2A5 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EF9F0F0E83F800DEE2A5 /* Company.m */; };
 		EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD3985710F64493000C3A72 /* PasteNumberViewController.m */; };
-		EDE96A3B114516D100675A74 /* icon_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDE96A3A114516D100675A74 /* icon_photo.png */; };
 		EDE96AA91145211200675A74 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = EDE96A651145211200675A74 /* tessdata */; };
 		EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDE96BE51145222200675A74 /* TessWrapper.mm */; };
 		EDE96BF9114526F400675A74 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE96BF8114526F400675A74 /* ImageUtils.m */; };
@@ -63,9 +62,9 @@
 		ED6899380F19DC5E0012436F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		ED6899390F19DC5E0012436F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		ED89F69B0F11644F00635A0A /* ko */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EDA293BA0F481B4900B1E860 /* taekbae57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taekbae57.png; path = ../../common/taekbae57.png; sourceTree = SOURCE_ROOT; };
-		EDA293BB0F481B4900B1E860 /* taekbae_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae_db.sql; path = ../../common/taekbae_db.sql; sourceTree = SOURCE_ROOT; };
-		EDA544A40F9A475800361A6F /* taekbae2_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae2_db.sql; path = ../../common/taekbae2_db.sql; sourceTree = SOURCE_ROOT; };
+		EDA293BA0F481B4900B1E860 /* taekbae57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taekbae57.png; path = ../../../common/taekbae57.png; sourceTree = SOURCE_ROOT; };
+		EDA293BB0F481B4900B1E860 /* taekbae_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae_db.sql; path = ../../../common/taekbae_db.sql; sourceTree = SOURCE_ROOT; };
+		EDA544A40F9A475800361A6F /* taekbae2_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = taekbae2_db.sql; path = ../../../common/taekbae2_db.sql; sourceTree = SOURCE_ROOT; };
 		EDA579D40F1A577900B3AC6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDA579E00F1A598C00B3AC6D /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		EDA579E10F1A598C00B3AC6D /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		EDC8EF9F0F0E83F800DEE2A5 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		EDD3985610F64493000C3A72 /* PasteNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteNumberViewController.h; sourceTree = "<group>"; };
 		EDD3985710F64493000C3A72 /* PasteNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteNumberViewController.m; sourceTree = "<group>"; };
-		EDE96A3A114516D100675A74 /* icon_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_photo.png; sourceTree = "<group>"; };
 		EDE96A651145211200675A74 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		EDE96AB81145218600675A74 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
 		EDE96BE41145222200675A74 /* TessWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessWrapper.h; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			children = (
 				EDE96DCD114542CC00675A74 /* sample4.jpg */,
 				EDE96DBF114541BF00675A74 /* sample3.jpg */,
-				EDE96A3A114516D100675A74 /* icon_photo.png */,
 				ED032D7E111ED01E00BBE996 /* backIcon.png */,
 				ED032D7F111ED01E00BBE996 /* forwardIcon.png */,
 			);
@@ -341,7 +338,6 @@
 				EDA544A50F9A475800361A6F /* taekbae2_db.sql in Resources */,
 				ED032D80111ED01E00BBE996 /* backIcon.png in Resources */,
 				ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */,
-				EDE96A3B114516D100675A74 /* icon_photo.png in Resources */,
 				EDE96AA91145211200675A74 /* tessdata in Resources */,
 				EDE96DC0114541BF00675A74 /* sample3.jpg in Resources */,
 				EDE96DCE114542CC00675A74 /* sample4.jpg in Resources */,
@@ -390,6 +386,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -403,6 +401,8 @@
 					"\"$(SRCROOT)/ext/iphone-simulator/lib\"",
 				);
 				PRODUCT_NAME = TaekBae;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Debug;
@@ -434,12 +434,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kee-won Seo";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kee-won Seo";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "1C24D1FD-717A-45F9-8A49-D8110F82FE90";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1C24D1FD-717A-45F9-8A49-D8110F82FE90";
 				SDKROOT = iphoneos2.0;
 			};
 			name = Debug;
