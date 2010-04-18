@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "Item.h"
 #import "Company.h"
+#import "UpdateManager.h"
 
 @interface TaekBaeAppDelegate (Private)
 - (void)createEditableCopyOfDatabaseIfNeeded;
@@ -86,8 +87,90 @@
 	//[fileManager removeItemAtPath:writableDBPath error:&error];
     success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
     if (!success) {
-        NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+        NSLog(@"Failed to create writable taekbae_db file with message '%@'.", [error localizedDescription]);
+		
+		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+															message: [NSString stringWithFormat:@"%@ (1) - %@",
+																	  NSLocalizedString(@"Writing DB failed", @""),
+																	  [error localizedDescription]]
+														   delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
+												   otherButtonTitles:nil] autorelease];
+		[alertView show];
+		return;
     }
+	
+	if ([UpdateManager isNewVersion]) {
+		writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"taekbae2_db.sql"];
+		defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae2_db.sql"];
+		//[fileManager removeItemAtPath:writableDBPath error:&error];
+		success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+		if (!success) {
+			NSLog(@"Failed to create writable taekbae2_db file with message '%@'.", [error localizedDescription]);
+			UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+																 message: [NSString stringWithFormat:@"%@ (2) - %@",
+																		   NSLocalizedString(@"Writing DB failed", @""),
+																		   [error localizedDescription]]
+																delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
+													   otherButtonTitles:nil] autorelease];
+			[alertView show];
+		}
+	}
+}
+
+
+- (void) reloadCompanyDatabase {
+	self.companys = nil;
+	[Company finalizeStatements];
+	
+	NSMutableArray *companyArray = [[NSMutableArray alloc] init];
+	self.companys = companyArray;
+	[companyArray release];
+	
+    // The database is stored in the application bundle. 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	//NSString *companyDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae2_db.sql"];
+	NSString *companyDBPath = [documentsDirectory stringByAppendingPathComponent:@"taekbae2_db.sql"];
+	sqlite3* db_companys=NULL;
+	//sqlite3* db_companys = db_items;
+	if (sqlite3_open([companyDBPath UTF8String], &db_companys) == SQLITE_OK)
+	{
+		// Get the primary key for all companys.
+		const char *sql = "SELECT pk FROM company ORDER BY korean";
+		sqlite3_stmt *statement=NULL;
+		// Preparing a statement compiles the SQL query into a byte-code program in the SQLite library.
+		// The third parameter is either the length of the SQL string or -1 to read up to the first null terminator.        
+		if (sqlite3_prepare_v2(db_companys, sql, -1, &statement, NULL) == SQLITE_OK) {
+			// We "step" through the results - once for each row.
+			while (sqlite3_step(statement) == SQLITE_ROW) {
+				// The second parameter indicates the column index into the result set.
+				int primaryKey = sqlite3_column_int(statement, 0);
+				// We avoid the alloc-init-autorelease pattern here because we are in a tight loop and
+				// autorelease is slightly more expensive than release. This design choice has nothing to do with
+				// actual memory management - at the end of this block of code, all the book objects allocated
+				// here will be in memory regardless of whether we use autorelease or release, because they are
+				// retained by the books array.
+				Company *item = [[Company alloc] initWithPrimaryKey:primaryKey database:db_companys];
+				[companys addObject:item];
+				[item release];
+			}
+		}
+		// "Finalize" the statement - releases the resources associated with the statement.
+		if (statement)
+			sqlite3_finalize(statement);
+	}
+	else {
+		// Even though the open failed, call close to properly clean up resources.
+		sqlite3_close(db_companys);
+		NSLog(@"Failed to open db_companys with message '%s'.", sqlite3_errmsg(db_companys));
+		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+															 message: NSLocalizedString(@"Loading DB failed. Please use 'Update' again.", @"")
+															delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
+												   otherButtonTitles:nil] autorelease];
+		[alertView show];
+		// Additional error handling, as appropriate...
+	}
 }
 
 // Open the database connection and retrieve minimal information for all objects.
@@ -95,12 +178,8 @@
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
     self.items = itemArray;
     [itemArray release];
-	
-	NSMutableArray *companyArray = [[NSMutableArray alloc] init];
-	self.companys = companyArray;
-	[companyArray release];
-	
-    // The database is stored in the application bundle. 
+
+	// The database is stored in the application bundle. 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"taekbae_db.sql"];
@@ -134,47 +213,17 @@
 	} else {
 		// Even though the open failed, call close to properly clean up resources.
 		sqlite3_close(db_items);
-		NSAssert1(0, @"Failed to open database with message '%s'.", sqlite3_errmsg(db_items));
+		NSLog( @"Failed to open database with message '%s'.", sqlite3_errmsg(db_items));
 		// Additional error handling, as appropriate...
+		
+		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+															 message: NSLocalizedString(@"Loading DB failed. Please reinstall this program. Sorry.", @"")
+															delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
+												   otherButtonTitles:nil] autorelease];
+		[alertView show];
 	}
 	
-	{
-		NSString *companyDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae2_db.sql"];		
-		sqlite3* db_companys=NULL;
-		//sqlite3* db_companys = db_items;
-		if (sqlite3_open([companyDBPath UTF8String], &db_companys) == SQLITE_OK)
-		{
-			// Get the primary key for all companys.
-			const char *sql = "SELECT pk FROM company ORDER BY korean";
-			sqlite3_stmt *statement=NULL;
-			// Preparing a statement compiles the SQL query into a byte-code program in the SQLite library.
-			// The third parameter is either the length of the SQL string or -1 to read up to the first null terminator.        
-			if (sqlite3_prepare_v2(db_companys, sql, -1, &statement, NULL) == SQLITE_OK) {
-				// We "step" through the results - once for each row.
-				while (sqlite3_step(statement) == SQLITE_ROW) {
-					// The second parameter indicates the column index into the result set.
-					int primaryKey = sqlite3_column_int(statement, 0);
-					// We avoid the alloc-init-autorelease pattern here because we are in a tight loop and
-					// autorelease is slightly more expensive than release. This design choice has nothing to do with
-					// actual memory management - at the end of this block of code, all the book objects allocated
-					// here will be in memory regardless of whether we use autorelease or release, because they are
-					// retained by the books array.
-					Company *item = [[Company alloc] initWithPrimaryKey:primaryKey database:db_companys];
-					[companys addObject:item];
-					[item release];
-				}
-			}
-			// "Finalize" the statement - releases the resources associated with the statement.
-			if (statement)
-				sqlite3_finalize(statement);
-		}
-		else {
-			// Even though the open failed, call close to properly clean up resources.
-			sqlite3_close(db_companys);
-			NSAssert1(0, @"Failed to open db_companys with message '%s'.", sqlite3_errmsg(db_companys));
-			// Additional error handling, as appropriate...
-		}
-	}
+	[self reloadCompanyDatabase];
 }
 
 - (NSString*)getCompanyName:(NSInteger)id

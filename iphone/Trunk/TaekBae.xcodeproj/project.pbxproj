@@ -17,6 +17,7 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		ED032D80111ED01E00BBE996 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7E111ED01E00BBE996 /* backIcon.png */; };
 		ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7F111ED01E00BBE996 /* forwardIcon.png */; };
+		ED061437117AFB5000C9250F /* UpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED061436117AFB5000C9250F /* UpdateManager.m */; };
 		ED6899340F19DA5E0012436F /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED6899330F19DA5E0012436F /* WebView.xib */; };
 		ED68993A0F19DC5E0012436F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6899390F19DC5E0012436F /* WebViewController.m */; };
 		ED89F69C0F11644F00635A0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED89F69A0F11644F00635A0A /* Localizable.strings */; };
@@ -49,6 +50,8 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED032D7E111ED01E00BBE996 /* backIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIcon.png; sourceTree = "<group>"; };
 		ED032D7F111ED01E00BBE996 /* forwardIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardIcon.png; sourceTree = "<group>"; };
+		ED061435117AFB5000C9250F /* UpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateManager.h; sourceTree = "<group>"; };
+		ED061436117AFB5000C9250F /* UpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateManager.m; sourceTree = "<group>"; };
 		ED6899330F19DA5E0012436F /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
 		ED6899380F19DC5E0012436F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		ED6899390F19DC5E0012436F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				EDA579E10F1A598C00B3AC6D /* ItemCell.m */,
 				EDD3985610F64493000C3A72 /* PasteNumberViewController.h */,
 				EDD3985710F64493000C3A72 /* PasteNumberViewController.m */,
+				ED061435117AFB5000C9250F /* UpdateManager.h */,
+				ED061436117AFB5000C9250F /* UpdateManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				ED68993A0F19DC5E0012436F /* WebViewController.m in Sources */,
 				EDA579E20F1A598C00B3AC6D /* ItemCell.m in Sources */,
 				EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */,
+				ED061437117AFB5000C9250F /* UpdateManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

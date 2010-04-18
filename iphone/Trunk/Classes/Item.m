@@ -113,7 +113,8 @@ static sqlite3_stmt *update_statement = nil;
             // use new variable values can be bound to placeholders.
             const char *sql = "SELECT title,company,number FROM item WHERE pk=?";
             if (sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK) {
-                NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+                NSLog(@"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+				return nil;
             }
         }
         // For this query, we bind the primary key to the first (and only) placeholder in the statement.
@@ -145,7 +146,8 @@ static sqlite3_stmt *update_statement = nil;
     if (insert_statement == nil) {
         static char *sql = "INSERT INTO item (title,company,number) VALUES(?,?,?)";
         if (sqlite3_prepare_v2(database, sql, -1, &insert_statement, NULL) != SQLITE_OK) {
-            NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+            NSLog(@"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+			return;
         }
     }
     sqlite3_bind_text(insert_statement, 1, [title UTF8String], -1, SQLITE_TRANSIENT);
@@ -155,7 +157,8 @@ static sqlite3_stmt *update_statement = nil;
     // Because we want to reuse the statement, we "reset" it instead of "finalizing" it.
     sqlite3_reset(insert_statement);
     if (success == SQLITE_ERROR) {
-        NSAssert1(0, @"Error: failed to insert into the database with message '%s'.", sqlite3_errmsg(database));
+        NSLog(@"Error: failed to insert into the database with message '%s'.", sqlite3_errmsg(database));
+		return;
     } else {
         // SQLite provides a method which retrieves the value of the most recently auto-generated primary key sequence
         // in the database. To access this functionality, the table should have a column declared of type 
@@ -167,14 +170,14 @@ static sqlite3_stmt *update_statement = nil;
 
 - (void)saveIfDirty 
 {
-	NSLog(@"updateIfDirty\n");
     if (dirty) {
         // Write any changes to the database.
         // First, if needed, compile the dehydrate query.
         if (update_statement == nil) {
             const char *sql = "UPDATE item SET title=?, company=?, number=? WHERE pk=?";
             if (sqlite3_prepare_v2(database, sql, -1, &update_statement, NULL) != SQLITE_OK) {
-                NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+                NSLog(@"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+				return;
             }
         }
         // Bind the query variables.
@@ -188,7 +191,8 @@ static sqlite3_stmt *update_statement = nil;
         sqlite3_reset(update_statement);
         // Handle errors.
         if (success != SQLITE_DONE) {
-            NSAssert1(0, @"Error: failed to dehydrate with message '%s'.", sqlite3_errmsg(database));
+            NSLog(@"Error: failed to dehydrate with message '%s'.", sqlite3_errmsg(database));
+			return;
         }
         // Update the object state with respect to unwritten changes.
         dirty = NO;
@@ -201,7 +205,8 @@ static sqlite3_stmt *update_statement = nil;
     if (delete_statement == nil) {
         const char *sql = "DELETE FROM item WHERE pk=?";
         if (sqlite3_prepare_v2(database, sql, -1, &delete_statement, NULL) != SQLITE_OK) {
-            NSAssert1(0, @"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+            NSLog(@"Error: failed to prepare statement with message '%s'.", sqlite3_errmsg(database));
+			return;
         }
     }
     // Bind the primary key variable.
@@ -212,7 +217,8 @@ static sqlite3_stmt *update_statement = nil;
     sqlite3_reset(delete_statement);
     // Handle errors.
     if (success != SQLITE_DONE) {
-        NSAssert1(0, @"Error: failed to delete from database with message '%s'.", sqlite3_errmsg(database));
+        NSLog(@"Error: failed to delete from database with message '%s'.", sqlite3_errmsg(database));
+		return;
     }
 }
 

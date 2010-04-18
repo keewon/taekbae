@@ -13,6 +13,9 @@
 #import "Company.h"
 #import "Item.h"
 #import "ItemCell.h"
+#import "UpdateManager.h"
+
+#define NEWS_IN_TABLE 0
 
 @interface RootViewController (Private)
 - (void)editItem: (Item*)item;
@@ -22,8 +25,10 @@
 
 @implementation RootViewController
 
+@synthesize tableView;
 @synthesize editViewController;
 @synthesize webViewController;
+@synthesize updateManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,38 +69,44 @@
 	UIBarButtonItem *segmentBarItem = [[[UIBarButtonItem alloc] initWithCustomView:segmentedControl] autorelease];
 	self.navigationItem.rightBarButtonItem = segmentBarItem;	
 #endif
+	
+/*	
+#if 1
+	//[ add toolbar and info button
+	
+	toolbar = [[UIToolbar alloc] init];
+	toolbar.barStyle = UIBarStyleDefault;
+	[toolbar sizeToFit];
+	
+	CGFloat toolbarHeight = [toolbar frame].size.height;
+	CGRect rootViewBounds = self.parentViewController.view.bounds;
+	CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
+	CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
+	CGRect rectArea = CGRectMake(0, rootViewHeight - toolbarHeight,
+								 rootViewWidth, toolbarHeight);
+	
+	[toolbar setFrame:rectArea];
+	
+	UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+								   initWithTitle: NSLocalizedString(@"Info", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(showInfo)];
+	[toolbar setItems:[NSArray arrayWithObjects:infoButton, nil]];
+	
+	
+	[self.navigationController.view addSubview:toolbar];
+
+#endif
+ */
 	self.title = NSLocalizedString(@"TaekBae", @"");
+}
+
+- (void)viewDidUnload {
+	self.tableView = nil;
+	[super viewDidUnload];	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	
-	/*
-	//[ add toolbar and info button
-	
-	if (toolbar == nil)
-	{
-		toolbar = [[UIToolbar alloc] init];
-		toolbar.barStyle = UIBarStyleDefault;
-		[toolbar sizeToFit];
-		
-		CGFloat toolbarHeight = [toolbar frame].size.height;
-		CGRect rootViewBounds = self.parentViewController.view.bounds;
-		CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
-		CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
-		CGRect rectArea = CGRectMake(0, rootViewHeight - toolbarHeight,
-									rootViewWidth, toolbarHeight);
-		
-		[toolbar setFrame:rectArea];
-		
-		UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
-									   initWithTitle: NSLocalizedString(@"Info", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(showInfo)];
-		[toolbar setItems:[NSArray arrayWithObjects:infoButton, nil]];
-	}
-	
-	[self.navigationController.view addSubview:toolbar];
-	 
-	 */
+	[toolbar setHidden: NO];
 	[self.tableView reloadData];
 }
 
@@ -104,11 +115,12 @@
     [super viewDidAppear:animated];
 }
 */
-/*
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+	[toolbar setHidden: YES];
 }
-*/
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -125,6 +137,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
+	self.webViewController = nil;
+	self.editViewController = nil;
 }
 
 #pragma mark Table view methods
@@ -138,7 +152,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	TaekBaeAppDelegate *appDelegate = (TaekBaeAppDelegate *)[[UIApplication sharedApplication] delegate];
 
+#if NEWS_IN_TABLE
     return [appDelegate.items count] + 1;
+#else
+	return [appDelegate.items count];
+#endif
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -147,14 +165,17 @@
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+#if NEWS_IN_TABLE
 	static NSString *CellIdentifier1 = @"Cell";
+#endif
 	static NSString *CellIdentifier2 = @"ItemCell";
 	
     // Set up the cell...
 	TaekBaeAppDelegate *appDelegate = (TaekBaeAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
+#if NEWS_IN_TABLE
 	if ([appDelegate.items count] <= indexPath.row)
 	{
 		UITableViewCell *cell = (ItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier1];
@@ -165,8 +186,9 @@
 		return cell;
 	}
 	else
+#endif
 	{
-		ItemCell *cell = (ItemCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier2];
+		ItemCell *cell = (ItemCell*)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier2];
 		if (cell == nil) {			
 			cell = [[[ItemCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier2] autorelease];
 		}
@@ -255,21 +277,14 @@
 	// [anotherViewController release];
 	
 	TaekBaeAppDelegate *appDelegate = (TaekBaeAppDelegate *)[[UIApplication sharedApplication] delegate];
+#if NEWS_IN_TABLE
 	if ([appDelegate.items count] <= indexPath.row)
 	{
-		if (self.webViewController == nil) {
-			WebViewController* wvc = [[WebViewController alloc] initWithNibName:@"WebView" bundle: [NSBundle mainBundle]];
-			self.webViewController = wvc;
-			[wvc release];
-		}
-		
-		[self.webViewController setURL: NSLocalizedString(@"homepage url", @"") 
-		 title: NSLocalizedString(@"About TaekBae", @"") encoding:nil];
-		[self.navigationController pushViewController:webViewController animated:YES];
-		
+		[self showInfo];
 		self.editing = NO;
 	}
 	else
+#endif
 	{
 		if (self.editing)
 		{
@@ -300,7 +315,7 @@
 }
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 		
@@ -312,7 +327,7 @@
 		 }
 		
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -369,8 +384,10 @@
  */
 
 - (void)dealloc {
-	[webViewController release];
-	[editViewController release];
+	self.webViewController = nil;
+	self.editViewController = nil;
+	self.updateManager = nil;
+	[toolbar release];
 	[addButtonItem release];
 	[infoButtonItem release];
     [super dealloc];	
@@ -394,13 +411,26 @@
 	[self editItem: nil];
 }   
 
-- (void)showInfo {
-	// open an alert with just an OK button
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"TaekBae", @"") message:NSLocalizedString(@"Korean package tracking widget - v0.1\nby oedalpha", @"")
-												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-	[alert show];	
-	[alert release];
+- (IBAction) showInfo {
+	if (self.webViewController == nil) {
+		WebViewController* wvc = [[WebViewController alloc] initWithNibName:@"WebView" bundle: [NSBundle mainBundle]];
+		self.webViewController = wvc;
+		[wvc release];
+	}
+	
+	[self.webViewController setURL: NSLocalizedString(@"homepage url", @"") 
+							 title: NSLocalizedString(@"About TaekBae", @"") encoding:nil];
+	[self.navigationController pushViewController:webViewController animated:YES];
 }
+
+- (IBAction) checkUpdate {
+	if (!self.updateManager)
+	{
+		self.updateManager = [[UpdateManager alloc] init];
+	}
+	[self.updateManager check];
+}
+
 
 @end
 

@@ -36,5 +36,7 @@
 - (NSString*)getCompanyPageEncoding:(NSInteger)id;
 - (BOOL) getCompanyUseNumPad:(NSInteger)id;
 - (BOOL) getCompanyFlagDaesin:(NSInteger)id;
+
+- (void) reloadCompanyDatabase;
 @end
 

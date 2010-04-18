@@ -8,19 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class EditViewController, WebViewController;
+@class EditViewController, WebViewController, UpdateManager;
 
-@interface RootViewController : UITableViewController {
-	
-	UIToolbar *toolbar;
+@interface RootViewController : UIViewController {
+
 	UIBarButtonItem *addButtonItem;
 	UIBarButtonItem *infoButtonItem;
+	IBOutlet UITableView *tableView;
+	UIToolbar *toolbar;
 	
 	EditViewController *editViewController;
 	WebViewController *webViewController;
+	UpdateManager *updateManager;
 }
 
-
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) EditViewController *editViewController;
 @property (nonatomic, retain) WebViewController *webViewController;
+@property (nonatomic, retain) UpdateManager *updateManager;
+
+- (IBAction) showInfo;
+- (IBAction) checkUpdate;
 @end
