@@ -15,7 +15,8 @@
 	UIBarButtonItem *addButtonItem;
 	UIBarButtonItem *infoButtonItem;
 	IBOutlet UITableView *tableView;
-	UIToolbar *toolbar;
+	IBOutlet UIBarButtonItem *buttonNews;
+	IBOutlet UIBarButtonItem *buttonCheckVersion;
 	
 	EditViewController *editViewController;
 	WebViewController *webViewController;
@@ -26,6 +27,8 @@
 @property (nonatomic, retain) EditViewController *editViewController;
 @property (nonatomic, retain) WebViewController *webViewController;
 @property (nonatomic, retain) UpdateManager *updateManager;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *buttonNews;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *buttonCheckVersion;
 
 - (IBAction) showInfo;
 - (IBAction) checkUpdate;

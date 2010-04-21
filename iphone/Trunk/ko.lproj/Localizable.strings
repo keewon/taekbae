@@ -8,6 +8,7 @@
 "Other companies" = "전체 목록";
 "Item No." = "운송장 번호";
 "Info" = "정보";
+"News" = "뉴스";
 "Untitled" = "제목 없음";
 "Undefined" = "(택배 업체를 정해주세요)";
 "OK" = "확인";
@@ -21,3 +22,12 @@
 "Open in Safari" = "Safari로 열기";
 "Open" = "열기";
 "Cancel" = "취소";
+"Check Ver." = "버전 체크";
+"Checking update now" = "업데이트 여부 확인중";
+"You are using latest version." = "최신 택배 업체 DB를 사용하고 있습니다.";
+"Writing DB failed." = "저장하지 못했습니다.";
+"Loading DB failed. Please use 'Check Ver.' again." = "업체 DB에 오류가 있습니다. '버전 체크'를 다시 눌러주세요.";
+"Loading DB failed. Please reinstall this program. Sorry." = "죄송합니다. DB에 오류가 있습니다. 프로그램을 다시 설치해주세요.";
+"Retrieving version information failed." = "버전 체크가 잘 안됩니다. 이상하다 싶으면 신고해주세요. 감사합니다.";
+"Updating now" = "업데이트 중입니다";
+"Writing DB to file system failed." = "업데이트된 DB를 저장하지 못했습니다.";

@@ -26,7 +26,7 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-	<key>DEFAULT_DB_VERSION</key>
+	<key>DEFAULT_COMPANY_DB_VERSION</key>
 	<string>1</string>
 </dict>
 </plist>

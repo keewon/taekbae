@@ -14,6 +14,7 @@
 "Other companies" = "Other companies";
 "Item No." = "Item No.";
 "Info" = "Info";
+"News" = "News";
 "Untitled" = "Untitled";
 "Undefined" = "(Select delivery company)";
 "OK" = "OK";
@@ -27,3 +28,11 @@
 "Open in Safari" = "Open in Safari";
 "Open" = "Open";
 "Cancel" = "Cancel";
+"Checking update now" = "Checking update now";
+"You are using latest version." = "You are using latest version.";
+"Writing DB failed." = "Writing DB failed.";
+"Loading DB failed. Please use 'Check Ver.' again." = "Loading DB failed. Please use 'Check Ver.' again.";
+"Loading DB failed. Please reinstall this program. Sorry." = "Loading DB failed. Please reinstall this program. Sorry.";
+"Retrieving version information failed." = "Retrieving version information failed.";
+"Updating now" = "Updating now";
+"Writing DB to file system failed." = "Writing DB to file system failed.";

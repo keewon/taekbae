@@ -26,5 +26,6 @@ typedef enum {
 
 - (void)check;
 + (BOOL)isNewVersion;
++ (void)setVersionToDefaultVersion;
 
 @end

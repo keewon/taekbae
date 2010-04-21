@@ -29,6 +29,7 @@
 @synthesize editViewController;
 @synthesize webViewController;
 @synthesize updateManager;
+@synthesize buttonNews, buttonCheckVersion;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,62 +41,14 @@
 	{
 		addButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem)];
 	}
-	/*
-	if (infoButtonItem == nil)
-	{
-		infoButtonItem = [[UIBarButtonItem alloc]
-						  initWithTitle: NSLocalizedString(@"Info", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(showInfo)];
-	}
-	 */
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	self.navigationItem.rightBarButtonItem = addButtonItem;
 #endif
-#if 0
-	// "Segmented" control to the right
-	UISegmentedControl *segmentedControl = [[[UISegmentedControl alloc] initWithItems:
-											 [NSArray arrayWithObjects:
-											  NSLocalizedString(@"Add", @""),
-											  NSLocalizedString(@"Edit", @""),
-											  nil]] autorelease];
-	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
-	segmentedControl.frame = CGRectMake(0, 0, 90, 30.0);
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-	segmentedControl.momentary = YES;
 	
-	//defaultTintColor = [segmentedControl.tintColor retain];	// keep track of this for later
-	
-	UIBarButtonItem *segmentBarItem = [[[UIBarButtonItem alloc] initWithCustomView:segmentedControl] autorelease];
-	self.navigationItem.rightBarButtonItem = segmentBarItem;	
-#endif
-	
-/*	
-#if 1
-	//[ add toolbar and info button
-	
-	toolbar = [[UIToolbar alloc] init];
-	toolbar.barStyle = UIBarStyleDefault;
-	[toolbar sizeToFit];
-	
-	CGFloat toolbarHeight = [toolbar frame].size.height;
-	CGRect rootViewBounds = self.parentViewController.view.bounds;
-	CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
-	CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
-	CGRect rectArea = CGRectMake(0, rootViewHeight - toolbarHeight,
-								 rootViewWidth, toolbarHeight);
-	
-	[toolbar setFrame:rectArea];
-	
-	UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
-								   initWithTitle: NSLocalizedString(@"Info", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(showInfo)];
-	[toolbar setItems:[NSArray arrayWithObjects:infoButton, nil]];
-	
-	
-	[self.navigationController.view addSubview:toolbar];
-
-#endif
- */
+	self.buttonNews.title = NSLocalizedString(@"News", @"");
+	self.buttonCheckVersion.title = NSLocalizedString(@"Check Ver.", @"");
 	self.title = NSLocalizedString(@"TaekBae", @"");
 }
 
@@ -106,7 +59,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-	[toolbar setHidden: NO];
 	[self.tableView reloadData];
 }
 
@@ -116,10 +68,11 @@
 }
 */
 
+/*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	[toolbar setHidden: YES];
 }
+*/
 
 /*
 - (void)viewDidDisappear:(BOOL)animated {
@@ -132,6 +85,11 @@
     // Return YES for supported orientations
 	return YES;
     //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate {
+	[super setEditing: editing animated: animate];
+	[self.tableView setEditing:editing animated: animate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -387,7 +345,7 @@
 	self.webViewController = nil;
 	self.editViewController = nil;
 	self.updateManager = nil;
-	[toolbar release];
+
 	[addButtonItem release];
 	[infoButtonItem release];
     [super dealloc];	

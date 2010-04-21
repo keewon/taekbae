@@ -9,7 +9,7 @@
 #import "UpdateManager.h"
 #import "TaekBaeAppDelegate.h"
 
-#if 0
+#if 1
 NSString * UPDATE_URL[] = {
 	nil,
 	@"http://kldp.net/scm/viewvc.php/*checkout*/common/version.txt?root=taekbae",
@@ -32,13 +32,13 @@ NSString * UPDATE_URL[] = {
 };
 #endif
 
-#define CURRENT_DB_VERSION @"CURRENT_DB_VERSION"
+#define CURRENT_COMPANY_DB_VERSION @"CURRENT_COMPANY_DB_VERSION"
 #define ALERT_VIEW_DOWNLOADING 1001
 
 @implementation UpdateManager
 
 + (NSInteger) currentVersion {
-	NSString* currentVersionString = [[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_DB_VERSION];
+	NSString* currentVersionString = [[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_COMPANY_DB_VERSION];
 	NSInteger currentVersion = 0;
 	if (currentVersionString)
 		currentVersion = [currentVersionString intValue];
@@ -47,7 +47,7 @@ NSString * UPDATE_URL[] = {
 }
 
 + (NSInteger) defaultVersion {
-	NSString* defaultVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"DEFAULT_DB_VERSION"];
+	NSString* defaultVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"DEFAULT_COMPANY_DB_VERSION"];
 	NSInteger defaultVersion = 0;
 	if (defaultVersionString)
 		defaultVersion = [defaultVersionString intValue];
@@ -60,6 +60,14 @@ NSString * UPDATE_URL[] = {
 	NSInteger defaultVersion = [UpdateManager defaultVersion];
 	
 	return defaultVersion > currentVersion;
+}
+
++ (void)setNewVersion: (NSInteger)v {
+	[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"%d", v] forKey: CURRENT_COMPANY_DB_VERSION];	
+}
+
++ (void)setVersionToDefaultVersion {
+	[UpdateManager setNewVersion: [UpdateManager defaultVersion]];
 }
 
 - (id) init {
@@ -195,7 +203,7 @@ NSString * UPDATE_URL[] = {
 		else if (currentVersion >= newVersion) {
 			requestAgain = NO;
 			UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"TaekBae", @"")
-															 message: [NSString stringWithFormat: @"%@ (%d)",
+															 message: [NSString stringWithFormat: @"%@ (v.%d)",
 																	   NSLocalizedString(@"You are using latest version.", @""),
 																	   currentVersion]
 															delegate:self 
@@ -226,6 +234,7 @@ NSString * UPDATE_URL[] = {
 													   delegate:self 
 											  cancelButtonTitle: NSLocalizedString(@"OK", @"") otherButtonTitles:nil] autorelease];
 		[alert show];
+		free(buffer);
 	} else if (state == STATE_DB) {
 		
 		// First, test for existence.
@@ -255,7 +264,7 @@ NSString * UPDATE_URL[] = {
 			if (success) {
 				success = [fileManager moveItemAtPath: tempDBPath toPath: writableDBPath error: &error];
 				if (success) {
-					[[NSUserDefaults standardUserDefaults] setObject: [NSString stringWithFormat:@"%d", newVersion] forKey: CURRENT_DB_VERSION];
+					[UpdateManager setNewVersion: newVersion];
 					
 					TaekBaeAppDelegate *appDelegate = (TaekBaeAppDelegate *)[[UIApplication sharedApplication] delegate];
 					[appDelegate reloadCompanyDatabase];
@@ -273,7 +282,7 @@ NSString * UPDATE_URL[] = {
 		if (!success) {
 			requestAgain = NO;
 			UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
-															 message: NSLocalizedString(@"Writing DB to file system failed", @"")
+															 message: NSLocalizedString(@"Writing DB to file system failed.", @"")
 															delegate:self 
 												   cancelButtonTitle: NSLocalizedString(@"OK", @"") otherButtonTitles:nil] autorelease];
 			[alert show];

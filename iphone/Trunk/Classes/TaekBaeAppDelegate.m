@@ -80,35 +80,41 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"taekbae_db.sql"];
     success = [fileManager fileExistsAtPath:writableDBPath];
-    if (success) return;
-	
-    // The writable database does not exist, so copy the default to the appropriate location.
-    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae_db.sql"];
-	//[fileManager removeItemAtPath:writableDBPath error:&error];
-    success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
-    if (!success) {
-        NSLog(@"Failed to create writable taekbae_db file with message '%@'.", [error localizedDescription]);
-		
-		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
-															message: [NSString stringWithFormat:@"%@ (1) - %@",
-																	  NSLocalizedString(@"Writing DB failed", @""),
-																	  [error localizedDescription]]
-														   delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
-												   otherButtonTitles:nil] autorelease];
-		[alertView show];
-		return;
-    }
-	
-	if ([UpdateManager isNewVersion]) {
-		writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"taekbae2_db.sql"];
-		defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae2_db.sql"];
+    if (!success) {		
+		// The writable database does not exist, so copy the default to the appropriate location.
+		NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae_db.sql"];
 		//[fileManager removeItemAtPath:writableDBPath error:&error];
 		success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
 		if (!success) {
+			NSLog(@"Failed to create writable taekbae_db file with message '%@'.", [error localizedDescription]);
+			
+			UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
+																 message: [NSString stringWithFormat:@"%@ (1) - %@",
+																		   NSLocalizedString(@"Writing DB failed.", @""),
+																		   [error localizedDescription]]
+																delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
+													   otherButtonTitles:nil] autorelease];
+			[alertView show];
+			return;
+		}
+	}
+	
+	if ([UpdateManager isNewVersion]) {
+		writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"taekbae2_db.sql"];
+		NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"taekbae2_db.sql"];
+		
+		success = [fileManager fileExistsAtPath:writableDBPath];
+		if (success) {
+			[fileManager removeItemAtPath:writableDBPath error:&error];
+		}
+		success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+		if (success) {
+			[UpdateManager setVersionToDefaultVersion];
+		} else {
 			NSLog(@"Failed to create writable taekbae2_db file with message '%@'.", [error localizedDescription]);
 			UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
 																 message: [NSString stringWithFormat:@"%@ (2) - %@",
-																		   NSLocalizedString(@"Writing DB failed", @""),
+																		   NSLocalizedString(@"Writing DB failed.", @""),
 																		   [error localizedDescription]]
 																delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
 													   otherButtonTitles:nil] autorelease];
@@ -165,7 +171,7 @@
 		sqlite3_close(db_companys);
 		NSLog(@"Failed to open db_companys with message '%s'.", sqlite3_errmsg(db_companys));
 		UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"")
-															 message: NSLocalizedString(@"Loading DB failed. Please use 'Update' again.", @"")
+															 message: NSLocalizedString(@"Loading DB failed. Please use 'Check Ver.' again.", @"")
 															delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"")
 												   otherButtonTitles:nil] autorelease];
 		[alertView show];
