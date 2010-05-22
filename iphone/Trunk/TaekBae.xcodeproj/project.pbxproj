@@ -25,6 +25,7 @@
 		EDA293BD0F481B4900B1E860 /* taekbae_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = EDA293BB0F481B4900B1E860 /* taekbae_db.sql */; };
 		EDA544A50F9A475800361A6F /* taekbae2_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = EDA544A40F9A475800361A6F /* taekbae2_db.sql */; };
 		EDA579E20F1A598C00B3AC6D /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA579E10F1A598C00B3AC6D /* ItemCell.m */; };
+		EDAAE83A11A88A9100BF9082 /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAAE83911A88A9100BF9082 /* Pair.m */; };
 		EDC8EDBB0F0E243F00DEE2A5 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EDBA0F0E243F00DEE2A5 /* EditViewController.m */; };
 		EDC8EE180F0E32C500DEE2A5 /* CompanyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EE170F0E32C500DEE2A5 /* CompanyListViewController.m */; };
 		EDC8EE810F0E390A00DEE2A5 /* TextEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */; };
@@ -33,6 +34,17 @@
 		EDC8EF2C0F0E749D00DEE2A5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */; };
 		EDC8EFA00F0E83F800DEE2A5 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EF9F0F0E83F800DEE2A5 /* Company.m */; };
 		EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD3985710F64493000C3A72 /* PasteNumberViewController.m */; };
+		EDDA366211A833EE00255A67 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDA366111A833EE00255A67 /* ImageUtils.m */; };
+		EDDA366E11A834E000255A67 /* camera_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EDDA366C11A834E000255A67 /* camera_blue.png */; };
+		EDDA366F11A834E000255A67 /* camera_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EDDA366D11A834E000255A67 /* camera_white.png */; };
+		EDE96AA91145211200675A74 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = EDE96A651145211200675A74 /* tessdata */; };
+		EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDE96BE51145222200675A74 /* TessWrapper.mm */; };
+		EDE96CE611452D7D00675A74 /* libtesseract_full_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */; };
+		EDE96CFD11452E4900675A74 /* libtiff_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96CFC11452E4900675A74 /* libtiff_s.a */; };
+		EDE96D0111452E6700675A74 /* libz_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96D0011452E6700675A74 /* libz_s.a */; };
+		EDE96D0511452E8C00675A74 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE96D0411452E8C00675A74 /* libtesseract_full.a */; };
+		EDE96DC0114541BF00675A74 /* sample3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDE96DBF114541BF00675A74 /* sample3.jpg */; };
+		EDE96DCE114542CC00675A74 /* sample4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDE96DCD114542CC00675A74 /* sample4.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +74,8 @@
 		EDA579D40F1A577900B3AC6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDA579E00F1A598C00B3AC6D /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		EDA579E10F1A598C00B3AC6D /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		EDAAE83811A88A9100BF9082 /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
+		EDAAE83911A88A9100BF9082 /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
 		EDAE43E30F63AAB900C227FB /* TaekBae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaekBae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC8EDB90F0E243F00DEE2A5 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		EDC8EDBA0F0E243F00DEE2A5 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
@@ -77,6 +91,20 @@
 		EDC8EF9F0F0E83F800DEE2A5 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		EDD3985610F64493000C3A72 /* PasteNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteNumberViewController.h; sourceTree = "<group>"; };
 		EDD3985710F64493000C3A72 /* PasteNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteNumberViewController.m; sourceTree = "<group>"; };
+		EDDA366011A833EE00255A67 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
+		EDDA366111A833EE00255A67 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
+		EDDA366C11A834E000255A67 /* camera_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_blue.png; sourceTree = "<group>"; };
+		EDDA366D11A834E000255A67 /* camera_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_white.png; sourceTree = "<group>"; };
+		EDE96A651145211200675A74 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		EDE96AB81145218600675A74 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
+		EDE96BE41145222200675A74 /* TessWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessWrapper.h; sourceTree = "<group>"; };
+		EDE96BE51145222200675A74 /* TessWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TessWrapper.mm; sourceTree = "<group>"; };
+		EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtesseract_full_s.a; path = "iphone-simulator/lib/libtesseract_full_s.a"; sourceTree = "<group>"; };
+		EDE96CFC11452E4900675A74 /* libtiff_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff_s.a; path = "iphone-simulator/lib/libtiff_s.a"; sourceTree = "<group>"; };
+		EDE96D0011452E6700675A74 /* libz_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libz_s.a; path = "iphone-simulator/lib/libz_s.a"; sourceTree = "<group>"; };
+		EDE96D0411452E8C00675A74 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
+		EDE96DBF114541BF00675A74 /* sample3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample3.jpg; sourceTree = "<group>"; };
+		EDE96DCD114542CC00675A74 /* sample4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample4.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +116,10 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				EDC8EF2C0F0E749D00DEE2A5 /* libsqlite3.0.dylib in Frameworks */,
+				EDE96CE611452D7D00675A74 /* libtesseract_full_s.a in Frameworks */,
+				EDE96CFD11452E4900675A74 /* libtiff_s.a in Frameworks */,
+				EDE96D0111452E6700675A74 /* libz_s.a in Frameworks */,
+				EDE96D0511452E8C00675A74 /* libtesseract_full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +129,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EDDA366011A833EE00255A67 /* ImageUtils.h */,
+				EDDA366111A833EE00255A67 /* ImageUtils.m */,
 				EDC8EE7F0F0E390A00DEE2A5 /* TextEntryViewController.h */,
 				EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
@@ -119,6 +153,10 @@
 				EDD3985710F64493000C3A72 /* PasteNumberViewController.m */,
 				ED061435117AFB5000C9250F /* UpdateManager.h */,
 				ED061436117AFB5000C9250F /* UpdateManager.m */,
+				EDE96BE41145222200675A74 /* TessWrapper.h */,
+				EDE96BE51145222200675A74 /* TessWrapper.mm */,
+				EDAAE83811A88A9100BF9082 /* Pair.h */,
+				EDAAE83911A88A9100BF9082 /* Pair.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -155,6 +193,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDE96A651145211200675A74 /* tessdata */,
 				ED032D78111ECEE800BBE996 /* images */,
 				EDA544A40F9A475800361A6F /* taekbae2_db.sql */,
 				EDA293BA0F481B4900B1E860 /* taekbae57.png */,
@@ -172,6 +211,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDE96AAA1145218600675A74 /* ext */,
 				EDC8EF2B0F0E749D00DEE2A5 /* libsqlite3.0.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -183,10 +223,74 @@
 		ED032D78111ECEE800BBE996 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EDDA366C11A834E000255A67 /* camera_blue.png */,
+				EDDA366D11A834E000255A67 /* camera_white.png */,
+				EDE96DCD114542CC00675A74 /* sample4.jpg */,
+				EDE96DBF114541BF00675A74 /* sample3.jpg */,
 				ED032D7E111ED01E00BBE996 /* backIcon.png */,
 				ED032D7F111ED01E00BBE996 /* forwardIcon.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		EDE96AAA1145218600675A74 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96CE311452D5D00675A74 /* iphone-simulator */,
+				EDE96AAB1145218600675A74 /* iphone-os */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		EDE96AAB1145218600675A74 /* iphone-os */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AAC1145218600675A74 /* include */,
+				EDE96BB51145218600675A74 /* lib */,
+			);
+			path = "iphone-os";
+			sourceTree = "<group>";
+		};
+		EDE96AAC1145218600675A74 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AB11145218600675A74 /* tesseract */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EDE96AB11145218600675A74 /* tesseract */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96AB81145218600675A74 /* baseapi.h */,
+			);
+			path = tesseract;
+			sourceTree = "<group>";
+		};
+		EDE96BB51145218600675A74 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96D0411452E8C00675A74 /* libtesseract_full.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EDE96CE311452D5D00675A74 /* iphone-simulator */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96CE411452D6800675A74 /* lib */,
+			);
+			name = "iphone-simulator";
+			sourceTree = "<group>";
+		};
+		EDE96CE411452D6800675A74 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EDE96D0011452E6700675A74 /* libz_s.a */,
+				EDE96CFC11452E4900675A74 /* libtiff_s.a */,
+				EDE96CE511452D7D00675A74 /* libtesseract_full_s.a */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +354,11 @@
 				EDA544A50F9A475800361A6F /* taekbae2_db.sql in Resources */,
 				ED032D80111ED01E00BBE996 /* backIcon.png in Resources */,
 				ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */,
+				EDE96AA91145211200675A74 /* tessdata in Resources */,
+				EDE96DC0114541BF00675A74 /* sample3.jpg in Resources */,
+				EDE96DCE114542CC00675A74 /* sample4.jpg in Resources */,
+				EDDA366E11A834E000255A67 /* camera_blue.png in Resources */,
+				EDDA366F11A834E000255A67 /* camera_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +381,9 @@
 				EDA579E20F1A598C00B3AC6D /* ItemCell.m in Sources */,
 				EDD3985810F64493000C3A72 /* PasteNumberViewController.m in Sources */,
 				ED061437117AFB5000C9250F /* UpdateManager.m in Sources */,
+				EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */,
+				EDDA366211A833EE00255A67 /* ImageUtils.m in Sources */,
+				EDAAE83A11A88A9100BF9082 /* Pair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -301,7 +414,13 @@
 				GCC_PREFIX_HEADER = TaekBae_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ext/iphone-os/lib\"",
+					"\"$(SRCROOT)/ext/iphone-simulator/lib\"",
+				);
 				PRODUCT_NAME = TaekBae;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
@@ -317,6 +436,11 @@
 				GCC_PREFIX_HEADER = TaekBae_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ext/iphone-os/lib\"",
+					"\"$(SRCROOT)/ext/iphone-simulator/lib\"",
+				);
 				PRODUCT_NAME = TaekBae;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

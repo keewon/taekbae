@@ -15,9 +15,11 @@
 @interface PasteNumberViewController : UITableViewController {
 	id<PasteNumberDelegate> delegate;
 	NSArray* candidates;
+	NSString* clipBoardText;
 }
 
 @property(readwrite, assign) id<PasteNumberDelegate> delegate;
 @property(nonatomic, assign) NSArray* candidates;
+@property(nonatomic, assign) NSString* clipBoardText;
 
 @end

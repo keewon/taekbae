@@ -11,7 +11,7 @@
 
 @implementation PasteNumberViewController
 
-@synthesize candidates, delegate;
+@synthesize candidates, delegate, clipBoardText;
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -80,6 +80,22 @@
     return 1;
 }
 
+/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return NSLocalizedString(@"Clip Board Text", @"");
+	}
+	else {
+		return NSLocalizedString(@"Choose appropriate number", @"");
+	}
+}
+*/
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+	return clipBoardText;
+}
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -99,24 +115,28 @@
     }
     
     // Set up the cell...
-	NSString* text = [candidates objectAtIndex: indexPath.row];
-	cell.text = text;
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	{
+		NSString* text = [candidates objectAtIndex: indexPath.row];
+		cell.text = text;
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
 	
     return cell;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
-	if (delegate)
+	
 	{
-		[delegate selectCell: indexPath.row];
+		if (delegate)
+		{
+			[delegate selectCell: indexPath.row];
+		}
+		[self.navigationController popViewControllerAnimated:YES];
 	}
-	[self.navigationController popViewControllerAnimated:YES];
 }
 
 

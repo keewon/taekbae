@@ -11,15 +11,22 @@
 
 @class EditViewController;
 
-@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate> {
+@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate, UIImagePickerControllerDelegate> {
 	IBOutlet UITextField* text1;
 	UIBarButtonItem* buttonSave;
 	NSInteger returnType;
 	EditViewController* parent;
 	NSString* textValue;
 	IBOutlet UIButton* buttonPasteNumbers;
+	IBOutlet UIButton* buttonCapture;
 	NSMutableArray* numbers;
+	NSString* clipBoardText;
+	NSMutableDictionary* capturedNumbersDict;
+	NSString* bestCapturedNumber;
+	NSTimer *processingTimer;
 	BOOL enableSaveButton;
+	UILabel *labelCaptureResult;
+	CGRect captureRect;
 }
 
 //- (BOOL)textFieldShouldReturn:(UITextField *)textField;
@@ -28,11 +35,13 @@
 //- (IBAction)save:(id)sender;
 - (IBAction)textViewDidChange:(id)sender;
 - (IBAction)pasteNumbers:(id)sender;
+- (IBAction)capture:(id)sender;
 
 - (void)setParent: (EditViewController*)aParent title:(NSString*)aTitle prevValue: (NSString*)aValue returnType:(NSInteger)aType;
 
 @property(nonatomic, retain) IBOutlet UITextField *text1;
 @property(nonatomic, retain) IBOutlet UIBarButtonItem *buttonSave;
 @property(nonatomic, retain) IBOutlet UIButton *buttonPasteNumbers;
+@property(nonatomic, retain) IBOutlet UIButton *buttonCapture;
 @property(nonatomic, copy) NSString* textValue;
 @end

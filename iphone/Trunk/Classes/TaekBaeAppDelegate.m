@@ -299,7 +299,7 @@
 			return [[companys objectAtIndex:i] useNumPad] != 0;
 		}
 	}
-	return NO;
+	return YES;
 }
 
 - (BOOL) getCompanyFlagDaesin:(NSInteger)id

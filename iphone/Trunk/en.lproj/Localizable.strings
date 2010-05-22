@@ -22,6 +22,8 @@
 "Please select delivery company." = "Please select delivery company.";
 "Select Numbers" = "Select Numbers";
 "Paste No." = "Paste No.";
+"Clip Board Text" = "Clip Board Text";
+"Choose appropriate number" = "Choose appropriate number";
 "homepage url" = "http://oedalpha.springnote.com/pages/2435384";
 "About TaekBae" = "TaekBae News";
 "Open App Store" = "Open App Store";
@@ -36,3 +38,5 @@
 "Retrieving version information failed." = "Retrieving version information failed.";
 "Updating now" = "Updating now";
 "Writing DB to file system failed." = "Writing DB to file system failed.";
+"Input: %@\nBest: %@" = " Input: %@\n Best: %@";
+"Camera Usage" = " Adjusting white box and iPhone\n to fit the numbers into the box.\n Only for Numbers\n Only for Black texts on white BG";

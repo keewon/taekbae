@@ -16,6 +16,8 @@
 "Please select delivery company." = " 택배 업체를 선택해주세요.";
 "Select Numbers" = "입력할 번호";
 "Paste No." = "번호 붙여넣기";
+"Clip Board Text" = "클립보드";
+"Choose appropriate number" = "번호를 고르세요";
 "homepage url" = "http://oedalpha.springnote.com/pages/2435384";
 "About TaekBae" = "TaekBae 소식";
 "Open App Store" = "App Store에서 열기";
@@ -31,3 +33,5 @@
 "Retrieving version information failed." = "버전 체크가 잘 안됩니다. 이상하다 싶으면 신고해주세요. 감사합니다.";
 "Updating now" = "업데이트 중입니다";
 "Writing DB to file system failed." = "업데이트된 DB를 저장하지 못했습니다.";
+"Input: %@\nBest: %@" = " 현재 입력: %@\n 인식 결과: %@";
+"Camera Usage" = " 하얀 상자와 아이폰 위치를 조정하여\n 상자 안에 번호가 꽉차게 해주세요.\n 숫자만 인식 가능합니다.\n 흰 배경에 검은 글자만 인식 가능합니다.";
