@@ -1,0 +1,26 @@
+README is provided in Korean only.
+----------------------------------
+External library 로 다음의 라이브러리를 사용합니다.
+ - Tesseract OCR
+ - libtiff
+ - zlib
+
+Build 를 쉽게 하기 위해 부득이하게 위 라이브러리를
+빌드하여 저장소에 넣어 배포하고 있습니다.
+위 라이브러리에 대해 특별한 수정을 가하지 않았습니다.
+
+위 library 를 build 하는 방법은 다음 사이트에
+소개 되어있습니다.
+ - http://sites.google.com/site/olipion/cross-compilation/tesseract-ocr
+
+또한 Build를 쉽게 하기 위해 Tesseract OCR 의
+ - headers
+ - tessdata
+를 저장소에 포함시켰습니다.
+
+이는 Tesseract OCR 를 배포하고자 함이 아닙니다.
+따라서 위 라이브러리를 자신의 프로젝트에 사용하고자
+하는 사람은 *반드시* 해당 라이브러리의 공식 배포
+루트를 이용하여야 할 것입니다.
+
+Thanks.
