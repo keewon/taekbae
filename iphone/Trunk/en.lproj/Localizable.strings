@@ -39,4 +39,4 @@
 "Updating now" = "Updating now";
 "Writing DB to file system failed." = "Writing DB to file system failed.";
 "Input: %@\nBest: %@" = " Input: %@\n Best: %@";
-"Camera Usage" = " Adjusting white box and iPhone\n to fit the numbers into the box.\n Only for Numbers\n Only for Black texts on white BG";
+"Camera Usage" = " Adjusting white box and iPhone\n to fit the numbers into the box.\n Only for Numbers\n Only for Black texts on white BG\n Powered by Tesseract OCR";

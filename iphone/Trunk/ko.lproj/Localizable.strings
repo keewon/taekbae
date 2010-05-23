@@ -34,4 +34,4 @@
 "Updating now" = "업데이트 중입니다";
 "Writing DB to file system failed." = "업데이트된 DB를 저장하지 못했습니다.";
 "Input: %@\nBest: %@" = " 현재 입력: %@\n 인식 결과: %@";
-"Camera Usage" = " 하얀 상자와 아이폰 위치를 조정하여\n 상자 안에 번호가 꽉차게 해주세요.\n 숫자만 인식 가능합니다.\n 흰 배경에 검은 글자만 인식 가능합니다.";
+"Camera Usage" = " 하얀 상자와 아이폰 위치를 조정하여\n 상자 안에 번호가 꽉차게 해주세요.\n 숫자만 인식 가능합니다.\n 흰 배경에 검은 글자만 인식 가능합니다.\n Powered by Tesseract OCR";

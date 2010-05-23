@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PasteNumberViewController.h"
+#import "CameraInput.h"
 
 @class EditViewController;
 
-@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate, UIImagePickerControllerDelegate> {
+@interface TextEntryViewController : UIViewController<UITextFieldDelegate, PasteNumberDelegate> {
 	IBOutlet UITextField* text1;
 	UIBarButtonItem* buttonSave;
 	NSInteger returnType;
@@ -21,12 +22,8 @@
 	IBOutlet UIButton* buttonCapture;
 	NSMutableArray* numbers;
 	NSString* clipBoardText;
-	NSMutableDictionary* capturedNumbersDict;
-	NSString* bestCapturedNumber;
-	NSTimer *processingTimer;
 	BOOL enableSaveButton;
-	UILabel *labelCaptureResult;
-	CGRect captureRect;
+	CameraInput* cameraInput;
 }
 
 //- (BOOL)textFieldShouldReturn:(UITextField *)textField;

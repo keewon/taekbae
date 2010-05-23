@@ -19,6 +19,7 @@ typedef struct {
 Image *createImage(int width, int height);
 Image *fromCGImage(CGImageRef srcImage, CGRect srcRect);  // alloc every time
 Image *fromCGImage2(CGImageRef srcImage, CGRect srcRect); // don't alloc every time, dealloc with destroyGlobalImage 
+Image *getGlobalImage(void);
 CGImageRef toCGImage(Image *srcImage);
 void destroyImage(Image *image);
 void destroyGlobalImage(void);

@@ -133,7 +133,7 @@
 	{
 		if (delegate)
 		{
-			[delegate selectCell: indexPath.row];
+			[delegate setNumber: [candidates objectAtIndex: indexPath.row]];
 		}
 		[self.navigationController popViewControllerAnimated:YES];
 	}

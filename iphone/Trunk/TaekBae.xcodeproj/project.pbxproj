@@ -18,6 +18,7 @@
 		ED032D80111ED01E00BBE996 /* backIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7E111ED01E00BBE996 /* backIcon.png */; };
 		ED032D81111ED01E00BBE996 /* forwardIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED032D7F111ED01E00BBE996 /* forwardIcon.png */; };
 		ED061437117AFB5000C9250F /* UpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED061436117AFB5000C9250F /* UpdateManager.m */; };
+		ED0EC8DB11A8F50A0055D300 /* CameraInput.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0EC8DA11A8F50A0055D300 /* CameraInput.m */; };
 		ED6899340F19DA5E0012436F /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED6899330F19DA5E0012436F /* WebView.xib */; };
 		ED68993A0F19DC5E0012436F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6899390F19DC5E0012436F /* WebViewController.m */; };
 		ED89F69C0F11644F00635A0A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED89F69A0F11644F00635A0A /* Localizable.strings */; };
@@ -64,6 +65,8 @@
 		ED032D7F111ED01E00BBE996 /* forwardIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardIcon.png; sourceTree = "<group>"; };
 		ED061435117AFB5000C9250F /* UpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateManager.h; sourceTree = "<group>"; };
 		ED061436117AFB5000C9250F /* UpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateManager.m; sourceTree = "<group>"; };
+		ED0EC8D911A8F50A0055D300 /* CameraInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraInput.h; sourceTree = "<group>"; };
+		ED0EC8DA11A8F50A0055D300 /* CameraInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraInput.m; sourceTree = "<group>"; };
 		ED6899330F19DA5E0012436F /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
 		ED6899380F19DC5E0012436F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		ED6899390F19DC5E0012436F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				EDDA366111A833EE00255A67 /* ImageUtils.m */,
 				EDC8EE7F0F0E390A00DEE2A5 /* TextEntryViewController.h */,
 				EDC8EE800F0E390A00DEE2A5 /* TextEntryViewController.m */,
+				ED0EC8D911A8F50A0055D300 /* CameraInput.h */,
+				ED0EC8DA11A8F50A0055D300 /* CameraInput.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* TaekBaeAppDelegate.h */,
@@ -384,6 +389,7 @@
 				EDE96BE61145222200675A74 /* TessWrapper.mm in Sources */,
 				EDDA366211A833EE00255A67 /* ImageUtils.m in Sources */,
 				EDAAE83A11A88A9100BF9082 /* Pair.m in Sources */,
+				ED0EC8DB11A8F50A0055D300 /* CameraInput.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +450,7 @@
 				PRODUCT_NAME = TaekBae;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};
@@ -471,10 +477,11 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "EEC37144-5734-4775-96B0-CBB44AC511E7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EEC37144-5734-4775-96B0-CBB44AC511E7";
-				SDKROOT = iphoneos2.0;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Release;
 		};

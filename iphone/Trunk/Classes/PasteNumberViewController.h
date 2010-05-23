@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol PasteNumberDelegate<NSObject>
-- (void) selectCell: (NSInteger)index;
+- (void) setNumber: (NSString*)number;
 @end
 
 @interface PasteNumberViewController : UITableViewController {

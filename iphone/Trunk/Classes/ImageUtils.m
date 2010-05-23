@@ -42,6 +42,10 @@ Image *getImage(int width, int height) {
 	return result;
 }
 
+Image *getGlobalImage(void) {
+	return gImage;
+}
+
 void destroyGlobalImage(void) {
 	destroyImage(gImage);
 	gImage = NULL;
