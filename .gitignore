@@ -1,0 +1,5 @@
+.DS_Store
+iphone/Trunk/build
+iphone/Branches/capture_test/build
+*.mode1v3
+*.pbxuser
