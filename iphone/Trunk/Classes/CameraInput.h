@@ -13,6 +13,7 @@
 @interface CameraInput : NSObject<UIImagePickerControllerDelegate> {
 	NSMutableDictionary* capturedNumbersDict;
 	NSString* bestCapturedNumber;
+	NSString* capturedNumber;
 	NSLock *ocrLock;
 	BOOL ocrQuit;
 	NSTimer *processingTimer;
@@ -22,6 +23,9 @@
 	
 	TextEntryViewController* parentViewController;
 }
+
+@property (retain) NSString* bestCapturedNumber;
+@property (retain) NSString* capturedNumber;
 
 - (void) capture: (TextEntryViewController*) aParentViewController;
 

@@ -25,6 +25,8 @@
 
 @implementation CameraInput
 
+@synthesize bestCapturedNumber, capturedNumber;
+
 #ifdef TEST_CAPTURE
 - (void)capture: (UIViewController*)aParentViewController
 {
@@ -186,7 +188,7 @@
 	
 	[capturedNumbersDict release];
 	capturedNumbersDict = [[NSMutableDictionary alloc] init];
-	bestCapturedNumber = @"";
+	self.bestCapturedNumber = @"";
 	
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
 	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -224,6 +226,8 @@
 	
 	[capturedNumbersDict release];
 	capturedNumbersDict = nil;
+	self.capturedNumber = nil;
+	self.bestCapturedNumber = nil;
 	
 	[parentViewController dismissModalViewControllerAnimated:YES];
 }
@@ -233,7 +237,7 @@
 }
 
 - (void) captureThis {
-	NSString* str = bestCapturedNumber;
+	NSString* str = self.bestCapturedNumber;
 	NSMutableString* result = [NSMutableString string];
 	
 	for (int i=0; i<[str length]; ++i) {
@@ -270,6 +274,24 @@ CGImageRef UIGetScreenImage();
 		return;
 	}
 
+	//[ set result
+	NSString *result = [[self.capturedNumber copy] autorelease];
+	NSString *resultShort;
+	
+	if ([result length] > 20) {
+		resultShort = [[result substringToIndex: 20] stringByAppendingString: @".."];
+	}
+	else {
+		resultShort = result;
+		if (!resultShort) {
+			resultShort = @"";
+		}
+	}
+	
+	[labelCaptureResult setText: [NSString stringWithFormat: NSLocalizedString(@"Input: %@\nBest: %@", @""), 
+								  resultShort, self.bestCapturedNumber]];
+	
+	//]
 	
 	CGImageRef screenCGImage = UIGetScreenImage();
 	Image *screenImage = fromCGImage2(screenCGImage, captureRect);
@@ -324,13 +346,12 @@ CGImageRef UIGetScreenImage();
 
 - (void) doOCR: (id)data
 {
+	NSAutoreleasePool*  pool = [[NSAutoreleasePool alloc] init];
 	if (ocrQuit) {
+		[pool release];
 		return;
 	}
-	[ocrLock lock];
-	
-	NSAutoreleasePool*  pool = [[NSAutoreleasePool alloc] init];
-	
+	[ocrLock lock];	
 //	struct timeval tv1, tv2;
 //	gettimeofday(&tv1, NULL);
 	
@@ -393,21 +414,11 @@ CGImageRef UIGetScreenImage();
 			NSNumber* value = [capturedNumbersDict objectForKey: key];
 			
 			if ([value intValue] > bestCount) {
-				bestCapturedNumber = key;
+				self.bestCapturedNumber = key;
 				bestCount = [value intValue];
 			}
 		}
-		
-		NSString *resultShort;
-		if ([result length] > 20) {
-			resultShort = [[result substringToIndex: 20] stringByAppendingString: @".."];
-		}
-		else {
-			resultShort = result;
-		}
-		
-		[labelCaptureResult setText: [NSString stringWithFormat: NSLocalizedString(@"Input: %@\nBest: %@", @""), 
-									  resultShort, bestCapturedNumber]];
+		self.capturedNumber = result;
 	}
 	
 //	gettimeofday(&tv2, NULL);
